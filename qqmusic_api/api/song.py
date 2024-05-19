@@ -261,7 +261,7 @@ class Song:
         Returns:
             dict: 链接字典
         """
-        return await get_song_urls([await self.mid], file_type, url_type)
+        return await get_song_urls([await self.mid], file_type, url_type,credential=self.credential)
 
     async def get_file_size(self, file_type: Optional[SongFileType] = None) -> dict:
         """
