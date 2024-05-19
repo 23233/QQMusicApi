@@ -21,7 +21,7 @@ def get_cache_file(*args) -> str:
 def get_api(field: str) -> dict:
     path = API_DIR / f"{field.lower()}.json"
     if path.exists():
-        with path.open() as f:
+        with path.open(encoding="utf-8") as f:
             data = json.load(f)
             return data
     else:
